@@ -10,7 +10,6 @@ function init() {
     height = canvas.height = window.innerHeight;
     particles = [];
     
-    // Create 80 particles
     for (let i = 0; i < 80; i++) {
         particles.push(new Particle());
     }
@@ -20,11 +19,10 @@ class Particle {
     constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.size = Math.random() * 2 + 0.5; // Tiny sparkles
+        this.size = Math.random() * 2 + 0.5;
         this.speedX = Math.random() * 1 - 0.5;
-        this.speedY = Math.random() * 1.5 + 0.5; // Drift upwards slowly
+        this.speedY = Math.random() * 1.5 + 0.5;
         
-        // Romantic mix of gold, soft lavender, and white
         const colors = [
             'rgba(212, 175, 55, 0.7)', // Gold
             'rgba(243, 232, 255, 0.7)', // Lavender
@@ -37,7 +35,6 @@ class Particle {
         this.y -= this.speedY;
         this.x += this.speedX;
 
-        // Reset particle to bottom when it drifts off screen
         if (this.y < 0) {
             this.y = height;
             this.x = Math.random() * width;
@@ -52,15 +49,12 @@ class Particle {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
         ctx.fill();
-        
-        // Add a gentle glow to the particles
         ctx.shadowBlur = 8;
         ctx.shadowColor = this.color;
     }
 }
 
 function animate() {
-    // Clear canvas with slight opacity for trailing effect
     ctx.clearRect(0, 0, width, height);
     
     particles.forEach(particle => {
@@ -71,9 +65,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-// Handle window resizing
 window.addEventListener('resize', init);
-
-// Start the magic
 init();
 animate();
