@@ -64,7 +64,21 @@ function animate() {
     
     requestAnimationFrame(animate);
 }
+// Music Play/Pause Logic
+function toggleMusic() {
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
 
+    if (music.paused) {
+        music.play();
+        btn.innerHTML = "Pause song ⏸️";
+        btn.style.boxShadow = "0 0 15px rgba(212, 175, 55, 0.8)"; // Add glowing effect when playing
+    } else {
+        music.pause();
+        btn.innerHTML = "Play our song 🎵";
+        btn.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)"; // Remove glow
+    }
+}
 window.addEventListener('resize', init);
 init();
 animate();
