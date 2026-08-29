@@ -52,13 +52,11 @@ body {
     animation: floatingCover 6s ease-in-out infinite;
 }
 
-/* Soft floating animation for the book */
 @keyframes floatingCover {
     0%, 100% { transform: translateY(0) rotateX(2deg) rotateY(-2deg); }
     50% { transform: translateY(-8px) rotateX(4deg) rotateY(0deg); }
 }
 
-/* Inner golden border frame */
 .cover-inner {
     padding: 40px;
     border: 2px solid rgba(212, 175, 55, 0.4);
@@ -68,7 +66,6 @@ body {
     text-align: center;
 }
 
-/* Typography & Ornaments */
 .ornament {
     font-size: 24px;
     color: #d4af37;
@@ -129,12 +126,12 @@ body {
     color: #4a2f58;
 }
 
-/* The Romantic "LINK" Button */
+/* Updated Button CSS for Mobile Fix */
 .golden-link {
     display: inline-block;
     padding: 12px 40px;
     font-size: 1.1rem;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     color: #fff;
     text-decoration: none;
     background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
@@ -143,6 +140,8 @@ body {
     transition: all 0.3s ease;
     border: 1px solid #f4e869;
     animation: softPulse 2.5s infinite;
+    position: relative; 
+    z-index: 999;
 }
 
 .golden-link:hover {
@@ -156,7 +155,6 @@ body {
     50% { box-shadow: 0 4px 25px rgba(212, 175, 55, 0.8); }
 }
 
-/* Responsive */
 @media (max-width: 600px) {
     .cover-inner { padding: 25px 20px; }
     .book-title { font-size: 2.8rem; }
