@@ -140,12 +140,17 @@ body {
     transition: all 0.3s ease;
     border: 1px solid #f4e869;
     animation: softPulse 2.5s infinite;
+    
+    /* MOBILE HITBOX FIXES BELOW */
     position: relative; 
-    z-index: 999;
+    z-index: 9999;
+    cursor: pointer;
+    touch-action: manipulation; /* Removes tap delay on mobile */
+    transform: translateZ(50px); /* Pushes the tap target forward in 3D space */
 }
 
 .golden-link:hover {
-    transform: translateY(-2px) scale(1.05);
+    transform: translateZ(50px) translateY(-2px) scale(1.05);
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
     background: linear-gradient(135deg, #e6c55c 0%, #d4af37 100%);
 }
