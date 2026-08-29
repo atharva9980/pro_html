@@ -1,0 +1,164 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at center, #5b3d68 0%, #1e1124 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+}
+
+/* Background Canvas */
+#sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Vintage Book Cover 3D Effect */
+.novel-container {
+    position: relative;
+    z-index: 10;
+    perspective: 1000px;
+    padding: 40px 20px;
+}
+
+.novel-cover {
+    background: #fdfaf6 url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    width: 100%;
+    max-width: 500px;
+    border-radius: 4px 12px 12px 4px;
+    box-shadow: 
+        inset 4px 0 10px rgba(0,0,0,0.1),
+        inset -1px 0 2px rgba(255,255,255,0.3),
+        -10px 15px 35px rgba(0,0,0,0.5),
+        -1px 0 0px #bca8c2,
+        -2px 0 0px #fdfaf6,
+        -3px 0 0px #bca8c2,
+        -4px 0 0px #fdfaf6;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: floatingCover 6s ease-in-out infinite;
+}
+
+/* Soft floating animation for the book */
+@keyframes floatingCover {
+    0%, 100% { transform: translateY(0) rotateX(2deg) rotateY(-2deg); }
+    50% { transform: translateY(-8px) rotateX(4deg) rotateY(0deg); }
+}
+
+/* Inner golden border frame */
+.cover-inner {
+    padding: 40px;
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    margin: 15px;
+    border-radius: 2px 8px 8px 2px;
+    position: relative;
+    text-align: center;
+}
+
+/* Typography & Ornaments */
+.ornament {
+    font-size: 24px;
+    color: #d4af37;
+    margin: 10px 0;
+}
+
+.book-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #4a2f58;
+    text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.3);
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.book-subtitle {
+    font-size: 1.1rem;
+    color: #8c7398;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+    margin: 20px auto;
+    width: 60%;
+}
+
+.message-content {
+    text-align: left;
+    color: #2c1b33;
+    line-height: 1.7;
+}
+
+.greeting {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.body-text {
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.sign-off {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #4a2f58;
+}
+
+/* The Romantic "LINK" Button */
+.golden-link {
+    display: inline-block;
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+    border: 1px solid #f4e869;
+    animation: softPulse 2.5s infinite;
+}
+
+.golden-link:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+    background: linear-gradient(135deg, #e6c55c 0%, #d4af37 100%);
+}
+
+@keyframes softPulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); }
+    50% { box-shadow: 0 4px 25px rgba(212, 175, 55, 0.8); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .cover-inner { padding: 25px 20px; }
+    .book-title { font-size: 2.8rem; }
+    .body-text { font-size: 1.05rem; }
+}
